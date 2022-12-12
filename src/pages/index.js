@@ -22,6 +22,7 @@ import { TestimonailsSlider } from "../components/slider/TestimonailsSlider";
 export default function Index() {
   const [scroll, setScroll] = useState(false);
   const [toggleIsMenu, settoggleIsMenu] = useState(false);
+  const [isLoader, setisLoader] = useState(true);
   const [windowSize, setWindowSize] = useState(getWindowSize());
   useEffect(() => {
     const handleScroll = (event) => {
@@ -55,6 +56,12 @@ export default function Index() {
     settoggleIsMenu(!toggleIsMenu);
   };
 
+  useEffect(() => {
+    setTimeout(() => {
+      setisLoader(false);
+    }, 900);
+  }, []);
+
   // var $navToggler = $('.navbar-toggler');
   // $navToggler.on('click', function () {
   //     $(this).toggleClass('actived');
@@ -67,10 +74,26 @@ export default function Index() {
     <>
       <Helmet>
         <meta charSet="utf-8" />
-        <title>Home</title>
+        <title>Smart Data IT Solutions & Services Template</title>
         <link rel="canonical" href="http://mysite.com/example" />
       </Helmet>
       <div class="wrapper">
+        {isLoader && (
+          <div class="preloader">
+            <div class="sk-cube-grid">
+              <span class="sk-cube"></span>
+              <span class="sk-cube"></span>
+              <span class="sk-cube"></span>
+              <span class="sk-cube"></span>
+              <span class="sk-cube"></span>
+              <span class="sk-cube"></span>
+              <span class="sk-cube"></span>
+              <span class="sk-cube"></span>
+              <span class="sk-cube"></span>
+            </div>
+          </div>
+        )}
+
         <header className="header header-transparent">
           <nav
             className={
@@ -1217,7 +1240,7 @@ Blog Grid
                     Satisfied Users Over The Globe
                   </h3>
                 </div>
-               <TestimonailsSlider/>
+                <TestimonailsSlider />
                 {/* /.testimonials */}
                 <div className="divider divider-light w-100 mt-60 mb-60" />
                 <div className="heading heading-light">
