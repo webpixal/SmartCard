@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import logoL from "../assets/images/logo/logo-light.png";
 import logoD from "../assets/images/logo/logo-dark.png";
@@ -17,8 +17,52 @@ import img1 from "../assets/images/blog/grid/1.jpg";
 import img2 from "../assets/images/blog/grid/2.jpg";
 import img3 from "../assets/images/blog/grid/3.jpg";
 import img4 from "../assets/images/banners/8.jpg";
+import { TestimonailsSlider } from "../components/slider/TestimonailsSlider";
 
 export default function Index() {
+  const [scroll, setScroll] = useState(false);
+  const [toggleIsMenu, settoggleIsMenu] = useState(false);
+  const [windowSize, setWindowSize] = useState(getWindowSize());
+  useEffect(() => {
+    const handleScroll = (event) => {
+      if (windowSize.innerWidth >= 992) {
+        setScroll(window.scrollY > 50);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  useEffect(() => {
+    function handleWindowResize() {
+      setWindowSize(getWindowSize());
+    }
+    window.addEventListener("resize", handleWindowResize);
+
+    return () => {
+      window.removeEventListener("resize", handleWindowResize);
+    };
+  }, []);
+
+  function getWindowSize() {
+    const { innerWidth, innerHeight } = window;
+    return { innerWidth, innerHeight };
+  }
+
+  const onMenuClick = () => {
+    settoggleIsMenu(!toggleIsMenu);
+  };
+
+  // var $navToggler = $('.navbar-toggler');
+  // $navToggler.on('click', function () {
+  //     $(this).toggleClass('actived');
+  // })
+  // $navToggler.on('click', function () {
+  //     $('.navbar-collapse').toggleClass('menu-opened');
+  // })
+
   return (
     <>
       <Helmet>
@@ -28,25 +72,38 @@ export default function Index() {
       </Helmet>
       <div class="wrapper">
         <header className="header header-transparent">
-          <nav className="navbar navbar-expand-lg sticky-navbar">
+          <nav
+            className={
+              scroll
+                ? "navbar navbar-expand-lg sticky-navbar is-sticky"
+                : "navbar navbar-expand-lg sticky-navbar"
+            }>
             <div className="container">
               <a className="navbar-brand" href="index.html">
                 <img src={logoL} className="logo-light" alt="logo" />
                 <img src={logoD} className="logo-dark" alt="logo" />
               </a>
-              <button className="navbar-toggler" type="button">
+              <button
+                onClick={() => onMenuClick()}
+                className="navbar-toggler"
+                type="button">
                 <span className="menu-lines">
                   <span />
                 </span>
               </button>
-              <div className="collapse navbar-collapse" id="mainNavigation">
+              <div
+                className={
+                  toggleIsMenu
+                    ? "collapse navbar-collapse"
+                    : "collapse navbar-collapse menu-opened"
+                }
+                id="mainNavigation">
                 <ul className="navbar-nav ml-auto">
                   <li className="nav__item  has-dropdown">
                     <a
                       href="index.html"
                       data-toggle="dropdown"
-                      className="dropdown-toggle nav__item-link active"
-                    >
+                      className="dropdown-toggle nav__item-link active">
                       Home
                     </a>
                     <ul className="dropdown-menu">
@@ -76,8 +133,7 @@ export default function Index() {
                     <a
                       href="#"
                       data-toggle="dropdown"
-                      className="dropdown-toggle nav__item-link"
-                    >
+                      className="dropdown-toggle nav__item-link">
                       Company
                     </a>
                     <ul className="dropdown-menu">
@@ -96,8 +152,7 @@ export default function Index() {
                       <li className="nav__item">
                         <a
                           href="leadership-team.html"
-                          className="nav__item-link"
-                        >
+                          className="nav__item-link">
                           Leadership Team
                         </a>
                       </li>
@@ -134,8 +189,7 @@ export default function Index() {
                     <a
                       href="#"
                       data-toggle="dropdown"
-                      className="dropdown-toggle nav__item-link"
-                    >
+                      className="dropdown-toggle nav__item-link">
                       IT Solutions
                     </a>
                     <ul className="dropdown-menu wide-dropdown-menu">
@@ -144,16 +198,14 @@ export default function Index() {
                           <div className="col-sm-6 dropdown-menu-col">
                             <a
                               href="it-solutions.html"
-                              className="nav__item-link dropdown-menu-title"
-                            >
+                              className="nav__item-link dropdown-menu-title">
                               IT Solutions
                             </a>
                             <ul className="nav flex-column">
                               <li className="nav__item">
                                 <a
                                   className="nav__item-link"
-                                  href="it-solutions-single.html"
-                                >
+                                  href="it-solutions-single.html">
                                   IT Management
                                 </a>
                               </li>{" "}
@@ -161,8 +213,7 @@ export default function Index() {
                               <li className="nav__item">
                                 <a
                                   className="nav__item-link"
-                                  href="it-solutions-single.html"
-                                >
+                                  href="it-solutions-single.html">
                                   Cyber Security
                                 </a>
                               </li>{" "}
@@ -170,8 +221,7 @@ export default function Index() {
                               <li className="nav__item">
                                 <a
                                   className="nav__item-link"
-                                  href="it-solutions-single.html"
-                                >
+                                  href="it-solutions-single.html">
                                   Cloud Computing
                                 </a>
                               </li>{" "}
@@ -179,8 +229,7 @@ export default function Index() {
                               <li className="nav__item">
                                 <a
                                   className="nav__item-link"
-                                  href="it-solutions-single.html"
-                                >
+                                  href="it-solutions-single.html">
                                   IT Consulting
                                 </a>
                               </li>{" "}
@@ -188,8 +237,7 @@ export default function Index() {
                               <li className="nav__item">
                                 <a
                                   className="nav__item-link"
-                                  href="it-solutions-single.html"
-                                >
+                                  href="it-solutions-single.html">
                                   Software Dev
                                 </a>
                               </li>{" "}
@@ -197,8 +245,7 @@ export default function Index() {
                               <li className="nav__item">
                                 <a
                                   className="nav__item-link"
-                                  href="it-solutions-single.html"
-                                >
+                                  href="it-solutions-single.html">
                                   IT Support
                                 </a>
                               </li>
@@ -209,16 +256,14 @@ export default function Index() {
                           <div className="col-sm-6 dropdown-menu-col">
                             <a
                               href="industries.html"
-                              className="nav__item-link dropdown-menu-title"
-                            >
+                              className="nav__item-link dropdown-menu-title">
                               Industries
                             </a>
                             <ul className="nav flex-column">
                               <li className="nav__item">
                                 <a
                                   className="nav__item-link"
-                                  href="industries-single-industry.html"
-                                >
+                                  href="industries-single-industry.html">
                                   Education, Non-Profit
                                 </a>
                               </li>{" "}
@@ -226,8 +271,7 @@ export default function Index() {
                               <li className="nav__item">
                                 <a
                                   className="nav__item-link"
-                                  href="industries-single-industry.html"
-                                >
+                                  href="industries-single-industry.html">
                                   Accounting, Finance
                                 </a>
                               </li>{" "}
@@ -235,8 +279,7 @@ export default function Index() {
                               <li className="nav__item">
                                 <a
                                   className="nav__item-link"
-                                  href="industries-single-industry.html"
-                                >
+                                  href="industries-single-industry.html">
                                   Government &amp; Public
                                 </a>
                               </li>{" "}
@@ -244,8 +287,7 @@ export default function Index() {
                               <li className="nav__item">
                                 <a
                                   className="nav__item-link"
-                                  href="industries-single-industry.html"
-                                >
+                                  href="industries-single-industry.html">
                                   Energy &amp; Utilities
                                 </a>
                               </li>{" "}
@@ -253,8 +295,7 @@ export default function Index() {
                               <li className="nav__item">
                                 <a
                                   className="nav__item-link"
-                                  href="industries-single-industry.html"
-                                >
+                                  href="industries-single-industry.html">
                                   Legal, Law Firms
                                 </a>
                               </li>{" "}
@@ -262,8 +303,7 @@ export default function Index() {
                               <li className="nav__item">
                                 <a
                                   className="nav__item-link"
-                                  href="industries-single-industry.html"
-                                >
+                                  href="industries-single-industry.html">
                                   Manufacturing
                                 </a>
                               </li>
@@ -283,8 +323,7 @@ export default function Index() {
                     <a
                       href="#"
                       data-toggle="dropdown"
-                      className="dropdown-toggle nav__item-link"
-                    >
+                      className="dropdown-toggle nav__item-link">
                       News&amp;Media
                     </a>
                     <ul className="dropdown-menu">
@@ -297,8 +336,7 @@ export default function Index() {
                       <li className="nav__item">
                         <a
                           href="blog-single-post.html"
-                          className="nav__item-link"
-                        >
+                          className="nav__item-link">
                           Single Blog Post
                         </a>
                       </li>
@@ -306,8 +344,7 @@ export default function Index() {
                       <li className="nav__item">
                         <a
                           href="case-studies-grid.html"
-                          className="nav__item-link"
-                        >
+                          className="nav__item-link">
                           Case Studies Grid
                         </a>
                       </li>
@@ -315,8 +352,7 @@ export default function Index() {
                       <li className="nav__item">
                         <a
                           href="case-studies-carousel.html"
-                          className="nav__item-link"
-                        >
+                          className="nav__item-link">
                           Case Studies Carousel
                         </a>
                       </li>
@@ -324,8 +360,7 @@ export default function Index() {
                       <li className="nav__item">
                         <a
                           href="case-studies-classic.html"
-                          className="nav__item-link"
-                        >
+                          className="nav__item-link">
                           Case Studies Classic
                         </a>
                       </li>
@@ -333,8 +368,7 @@ export default function Index() {
                       <li className="nav__item">
                         <a
                           href="case-studies-single.html"
-                          className="nav__item-link"
-                        >
+                          className="nav__item-link">
                           Single Case Study
                         </a>
                       </li>
@@ -347,8 +381,7 @@ export default function Index() {
                     <a
                       href="#"
                       data-toggle="dropdown"
-                      className="dropdown-toggle nav__item-link"
-                    >
+                      className="dropdown-toggle nav__item-link">
                       Features
                     </a>
                     <ul className="dropdown-menu">
@@ -367,8 +400,7 @@ export default function Index() {
                       <li className="nav__item">
                         <a
                           href="#"
-                          className="nav__item-link  open-register-popup"
-                        >
+                          className="nav__item-link  open-register-popup">
                           Register
                         </a>
                       </li>
@@ -376,8 +408,7 @@ export default function Index() {
                       <li className="nav__item">
                         <a
                           href="#"
-                          className="nav__item-link  open-login-popup"
-                        >
+                          className="nav__item-link  open-login-popup">
                           Login
                         </a>
                       </li>
@@ -400,8 +431,7 @@ export default function Index() {
                 <li className="d-none d-xl-block">
                   <a
                     href="request-quote.html"
-                    className="btn action__btn-contact"
-                  >
+                    className="btn action__btn-contact">
                     Request A Quote
                   </a>
                 </li>
@@ -469,8 +499,7 @@ About Layout 4
                 <div className="video__btn-wrapper">
                   <a
                     className="video__btn video__btn-white popup-video"
-                    href="https://www.youtube.com/watch?v=nrJtHemSPW4"
-                  >
+                    href="https://www.youtube.com/watch?v=nrJtHemSPW4">
                     <div className="video__player">
                       <i className="fa fa-play" />
                     </div>
@@ -495,8 +524,7 @@ About Layout 4
                     Trusted By The World's
                     <a
                       href="it-solutions.html"
-                      className="btn btn__link btn__primary btn__underlined"
-                    >
+                      className="btn btn__link btn__primary btn__underlined">
                       Best Organizations
                     </a>
                   </p>
@@ -554,8 +582,7 @@ About Layout 4
               <div className="col-12 btn-wrapper">
                 <a
                   href="#"
-                  className="btn btn__secondary btn__bordered btn__icon"
-                >
+                  className="btn btn__secondary btn__bordered btn__icon">
                   <span>Explore All Services</span>
                   <i className="icon-arrow-right" />
                 </a>
@@ -591,8 +618,7 @@ About Layout 4
                     </p>
                     <a
                       href="#"
-                      className="btn btn__primary btn__primary-style2 btn__icon mt-30 mb-30"
-                    >
+                      className="btn btn__primary btn__primary-style2 btn__icon mt-30 mb-30">
                       <span>Our Pricing</span>
                       <i className="icon-arrow-right" />
                     </a>
@@ -719,8 +745,7 @@ About Layout 4
                     </p>
                     <a
                       href="#"
-                      className="btn btn__primary btn__bordered btn__icon mb-30"
-                    >
+                      className="btn btn__primary btn__bordered btn__icon mb-30">
                       <span>Request Demo</span>
                       <i className="icon-arrow-right" />
                     </a>
@@ -859,8 +884,7 @@ portfolio Grid
                       </p>
                       <a
                         href="#"
-                        className="btn btn__white btn__bordered btn__xl btn__icon"
-                      >
+                        className="btn btn__white btn__bordered btn__xl btn__icon">
                         <span>Download Brochure</span>
                         <i className="icon-arrow-right" />
                       </a>
@@ -953,8 +977,7 @@ portfolio Grid
                         </p>
                         <a
                           href="#"
-                          className="btn btn__link btn__white btn__icon px-0"
-                        >
+                          className="btn btn__link btn__white btn__icon px-0">
                           <span>Find Your Solution</span>{" "}
                           <i className="icon-arrow-right" />
                         </a>
@@ -1082,8 +1105,7 @@ Blog Grid
                     </p>
                     <a
                       href="blog-single-post.html"
-                      className="btn btn__secondary btn__link"
-                    >
+                      className="btn btn__secondary btn__link">
                       <span>Read More</span>
                       <i className="icon-arrow-right" />
                     </a>
@@ -1124,8 +1146,7 @@ Blog Grid
                     </p>
                     <a
                       href="blog-single-post.html"
-                      className="btn btn__secondary btn__link"
-                    >
+                      className="btn btn__secondary btn__link">
                       <span>Read More</span>
                       <i className="icon-arrow-right" />
                     </a>
@@ -1167,8 +1188,7 @@ Blog Grid
                     </p>
                     <a
                       href="blog-single-post.html"
-                      className="btn btn__secondary btn__link"
-                    >
+                      className="btn btn__secondary btn__link">
                       <span>Read More</span>
                       <i className="icon-arrow-right" />
                     </a>
@@ -1197,123 +1217,7 @@ Blog Grid
                     Satisfied Users Over The Globe
                   </h3>
                 </div>
-                <div className="testimonials testimonials-wrapper">
-                  <div className="slider-with-navs">
-                    {/* Testimonial #1 */}
-                    <div className="testimonial-item">
-                      <p className="testimonial__desc color-white">
-                        If you’re looking for a rewarding career and the chance
-                        to make an impact, you’ve come to the right place. We
-                        will transform your business through our techniques!
-                      </p>
-                      <div className="testimonial__meta">
-                        <h4 className="testimonial__meta-title">
-                          Ahmed Abdallah
-                        </h4>
-                        <p className="testimonial__meta-desc">
-                          Digital Media Manager
-                        </p>
-                      </div>
-                      {/* /.testimonial-meta */}
-                    </div>
-                    {/* /. testimonial-item */}
-                    {/* Testimonial #2 */}
-                    <div className="testimonial-item">
-                      <p className="testimonial__desc color-white">
-                        If you’re looking for a rewarding career and the chance
-                        to make an impact, you’ve come to the right place. We
-                        will transform your business through our techniques!{" "}
-                      </p>
-                      <div className="testimonial__meta">
-                        <h4 className="testimonial__meta-title">John Peter</h4>
-                        <p className="testimonial__meta-desc">7oroof Inc</p>
-                      </div>
-                      {/* /.testimonial-meta */}
-                    </div>
-                    {/* /. testimonial-item */}
-                    {/* Testimonial #3 */}
-                    <div className="testimonial-item">
-                      <p className="testimonial__desc color-white">
-                        If you’re looking for a rewarding career and the chance
-                        to make an impact, you’ve come to the right place. We
-                        will transform your business through our techniques!
-                      </p>
-                      <div className="testimonial__meta">
-                        <h4 className="testimonial__meta-title">Ayman</h4>
-                        <p className="testimonial__meta-desc">7oroof Inc</p>
-                      </div>
-                      {/* /.testimonial-meta */}
-                    </div>
-                    {/* /. testimonial-item */}
-                    {/* Testimonial #2 */}
-                    <div className="testimonial-item">
-                      <p className="testimonial__desc color-white">
-                        {" "}
-                        If you’re looking for a rewarding career and the chance
-                        to make an impact, you’ve come to the right place. We
-                        will transform your business through our techniques!{" "}
-                      </p>
-                      <div className="testimonial__meta">
-                        <h4 className="testimonial__meta-title">John Peter</h4>
-                        <p className="testimonial__meta-desc">7oroof Inc</p>
-                      </div>
-                      {/* /.testimonial-meta */}
-                    </div>
-                    {/* /. testimonial-item */}
-                    {/* Testimonial #3 */}
-                    <div className="testimonial-item">
-                      <p className="testimonial__desc color-white">
-                        My project was a simple &amp; small task, but the
-                        persistence and determination turned it into an awesome
-                        and great project which make me happy .
-                      </p>
-                      <div className="testimonial__meta">
-                        <h4 className="testimonial__meta-title">John Peter</h4>
-                        <p className="testimonial__meta-desc">7oroof Inc</p>
-                      </div>
-                      {/* /.testimonial-meta */}
-                    </div>
-                    {/* /. testimonial-item */}
-                  </div>
-                  <div className="slider-nav">
-                    <div className="testimonial__thumb">
-                      <img
-                        src="assets/images/testimonials/thumbs/1.png"
-                        alt="author thumb"
-                      />
-                    </div>
-                    {/* /.testimonial-thumb */}
-                    <div className="testimonial__thumb">
-                      <img
-                        src="assets/images/testimonials/thumbs/2.png"
-                        alt="author thumb"
-                      />
-                    </div>
-                    {/* /.testimonial-thumb */}
-                    <div className="testimonial__thumb">
-                      <img
-                        src="assets/images/testimonials/thumbs/3.png"
-                        alt="author thumb"
-                      />
-                    </div>
-                    {/* /.testimonial-thumb */}
-                    <div className="testimonial__thumb">
-                      <img
-                        src="assets/images/testimonials/thumbs/2.png"
-                        alt="author thumb"
-                      />
-                    </div>
-                    {/* /.testimonial-thumb */}
-                    <div className="testimonial__thumb">
-                      <img
-                        src="assets/images/testimonials/thumbs/3.png"
-                        alt="author thumb"
-                      />
-                    </div>
-                    {/* /.testimonial-thumb */}
-                  </div>
-                  {/* /.slcik-nav */}
-                </div>
+               <TestimonailsSlider/>
                 {/* /.testimonials */}
                 <div className="divider divider-light w-100 mt-60 mb-60" />
                 <div className="heading heading-light">
@@ -1331,8 +1235,7 @@ Blog Grid
                     className="contact-panel__form"
                     method="post"
                     action="assets/php/contact.php"
-                    id="contactForm"
-                  >
+                    id="contactForm">
                     <div className="row">
                       <div className="col-12">
                         <h4 className="contact-panel__title mb-20">
@@ -1411,15 +1314,13 @@ Blog Grid
                           />
                           <label
                             className="custom-control-label"
-                            htmlFor="acceptTerms"
-                          >
+                            htmlFor="acceptTerms">
                             I accept the privacy and terms.
                           </label>
                         </div>
                         <button
                           type="submit"
-                          className="btn btn__primary btn__xl btn__block"
-                        >
+                          className="btn btn__primary btn__xl btn__block">
                           Submit Request{" "}
                         </button>
                         <div className="contact-result" />
@@ -1580,8 +1481,7 @@ Footer
                     </span>
                     <a
                       className="fz-14 color-primary"
-                      href="http://themeforest.net/user/7oroof"
-                    >
+                      href="http://themeforest.net/user/7oroof">
                       7oroof.com
                     </a>
                   </div>
@@ -1665,8 +1565,7 @@ Footer
                   />
                   <label
                     className="custom-control-label"
-                    htmlFor="customCheck1"
-                  >
+                    htmlFor="customCheck1">
                     Remember Me!
                   </label>
                 </div>
@@ -1676,8 +1575,7 @@ Footer
               </div>
               <button
                 type="submit"
-                className="btn btn__primary btn__block btn__xl"
-              >
+                className="btn btn__primary btn__block btn__xl">
                 Login
               </button>
             </form>
@@ -1687,8 +1585,7 @@ Footer
               </span>
               <button
                 id="go-register"
-                className="go-register fz-14 font-weight-bold"
-              >
+                className="go-register fz-14 font-weight-bold">
                 <span>Register Here</span>
                 <i className="icon-arrow-right" />
               </button>
@@ -1729,16 +1626,14 @@ Footer
                   />
                   <label
                     className="custom-control-label"
-                    htmlFor="customCheck2"
-                  >
+                    htmlFor="customCheck2">
                     I read &amp; agree to <a href="#">Terms &amp; Conditions</a>
                   </label>
                 </div>
               </div>
               <button
                 type="submit"
-                className="btn btn__primary btn__block btn__xl"
-              >
+                className="btn btn__primary btn__block btn__xl">
                 Register
               </button>
             </form>

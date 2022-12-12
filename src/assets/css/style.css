@@ -5558,7 +5558,7 @@ input[type="radio"] {
 }
 
 .testimonials .slider-nav .testimonial__thumb:not(.slick-active) {
-  opacity: 0;
+  opacity: 1!important;
 }
 
 .testimonials .slick-list {
