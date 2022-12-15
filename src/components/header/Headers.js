@@ -1,22 +1,62 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import logoL from "../../assets/images/logo/logo-light.png";
 import logoD from "../../assets/images/logo/logo-dark.png";
 
 export default function Headers() {
+  const [scroll, setScroll] = useState(false);
+  const [toggleIsMenu, settoggleIsMenu] = useState(false);
+  const [windowSize, setWindowSize] = useState(getWindowSize());
+  useEffect(() => {
+    const handleScroll = (event) => {
+      if (windowSize.innerWidth >= 992) {
+        setScroll(window.scrollY > 50);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  function getWindowSize() {
+    const { innerWidth, innerHeight } = window;
+    return { innerWidth, innerHeight };
+  }
+
+  const onMenuClick = () => {
+    settoggleIsMenu(!toggleIsMenu);
+  };
   return (
     <header className="header header-transparent">
-      <nav className="navbar navbar-expand-lg sticky-navbar">
+      <nav
+        className={
+          scroll
+            ? "navbar navbar-expand-lg sticky-navbar is-sticky"
+            : "navbar navbar-expand-lg sticky-navbar"
+        }
+      >
         <div className="container">
           <a className="navbar-brand" href="index.html">
             <img src={logoL} className="logo-light" alt="logo" />
             <img src={logoD} className="logo-dark" alt="logo" />
           </a>
-          <button className="navbar-toggler" type="button">
+          <button
+            onClick={() => onMenuClick()}
+            className="navbar-toggler"
+            type="button"
+          >
             <span className="menu-lines">
               <span />
             </span>
           </button>
-          <div className="collapse navbar-collapse" id="mainNavigation">
+          <div
+            className={
+              toggleIsMenu
+                ? "collapse navbar-collapse"
+                : "collapse navbar-collapse menu-opened"
+            }
+            id="mainNavigation"
+          >
             <ul className="navbar-nav ml-auto">
               <li className="nav__item  has-dropdown">
                 <a
