@@ -1071,6 +1071,75 @@ select {
   z-index: 999;
   opacity: 1;
 }
+.bg-img-page-title {
+  background-image: url("../../assets/images/page-titles/4.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  position: relative;
+  left: 0px;
+  top: 0px;
+  z-index: 999;
+  opacity: 1;
+}
+.bg-img-page-title-faq {
+  background-image: url("../../assets/images/backgrounds/14.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  position: relative;
+  left: 0px;
+  top: 0px;
+  z-index: 999;
+  opacity: 1;
+}
+.bg-img-page-title-faq-inner {
+  background-image: url("../../assets/images/banners/6.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  position: relative;
+  left: 0px;
+  top: 0px;
+  z-index: 999;
+  opacity: 1;
+}
+.bg-img-page-title-service {
+  background-image: url("../../assets/images/backgrounds/16.png");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  position: relative;
+  left: 0px;
+  top: 0px;
+  z-index: 999;
+  opacity: 1;
+}
+
+.bg-slider-img-Banner-multi {
+  background-image: url("../../assets/images/backgrounds/1.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  position: relative;
+  left: 0px;
+  top: 0px;
+  z-index: 999;
+  opacity: 1;
+}
+
+.bg-slider-img-Banner-Pricing {
+  background-image: url("../../assets/images/backgrounds/15.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  position: relative;
+  left: 0px;
+  top: 0px;
+  z-index: 999;
+  opacity: 1;
+}
+
 .bg-img-two {
   background-image: url("../../assets/images/sliders/2.jpg");
   background-size: cover;
@@ -5558,7 +5627,7 @@ input[type="radio"] {
 }
 
 .testimonials .slider-nav .testimonial__thumb:not(.slick-active) {
-  opacity: 1!important;
+  opacity: 1 !important;
 }
 
 .testimonials .slick-list {

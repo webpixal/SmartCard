@@ -1,7 +1,7 @@
 import React from "react";
-import singnture from "../assets/images/about/singnture.png";
-import bannerimg from "../assets/images/banners/7.jpg";
-import Awards from "../components/slider/Awards";
+import singnture from "../../assets/images/about/singnture.png";
+import bannerimg from "../../assets/images/banners/7.jpg";
+import Awards from "../../components/slider/Awards";
 
 export default function BannerLayoutSectionFive() {
   return (

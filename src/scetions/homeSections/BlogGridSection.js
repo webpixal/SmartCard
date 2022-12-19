@@ -1,8 +1,7 @@
 import React from "react";
-import img1 from "../assets/images/blog/grid/1.jpg";
-import img2 from "../assets/images/blog/grid/2.jpg";
-import img3 from "../assets/images/blog/grid/3.jpg";
-import img4 from "../assets/images/banners/8.jpg";
+import img1 from "../../assets/images/blog/grid/1.jpg";
+import img2 from "../../assets/images/blog/grid/2.jpg";
+import img3 from "../../assets/images/blog/grid/3.jpg";
 
 export default function BlogGridSection() {
   return (

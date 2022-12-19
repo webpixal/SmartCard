@@ -11,7 +11,7 @@ export default function Minislider() {
     slidesToShow: 4,
     slidesToScroll: 1,
     autoplay: true,
-    speed: 2000,
+    speed: 5000,
     autoplaySpeed: 2000,
     cssEase: "linear",
     // appendDots: (dots) => (

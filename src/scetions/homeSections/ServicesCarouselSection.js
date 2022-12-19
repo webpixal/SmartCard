@@ -1,5 +1,5 @@
 import React from "react";
-import OfferingSlider from "../components/slider/OfferingSlider";
+import OfferingSlider from "../../components/slider/OfferingSlider";
 
 export default function ServicesCarouselSection() {
   return (

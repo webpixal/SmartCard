@@ -1,6 +1,6 @@
 import React from "react";
-import Minislider from "../components/slider/Minislider";
-import { TestimonailsSlider } from "../components/slider/TestimonailsSlider";
+import Minislider from "../../components/slider/Minislider";
+import { TestimonailsSlider } from "../../components/slider/TestimonailsSlider";
 
 export default function BannerLayoutTwo() {
   return (

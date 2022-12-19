@@ -1,5 +1,5 @@
 import React from "react";
-import bannerimgthree from "../assets/images/banners/3.jpg";
+import bannerimgthree from "../../assets/images/banners/3.jpg";
 
 export default function FeaturesLayoutSection() {
   return (
