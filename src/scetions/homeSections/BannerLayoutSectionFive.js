@@ -5,7 +5,7 @@ import Awards from "../../components/slider/Awards";
 
 export default function BannerLayoutSectionFive() {
   return (
-    <section className="banner-layout5 banner-layout5-sticky bg-parallax pt-130 pb-0 bg-slider-img-Banner checking">
+    <section className="banner-layout5 banner-layout5-sticky bg-parallax pt-130 pb-0 bg-slider-img-Banner">
       <div className="container-fluid">
         <div className="row">
           <div className="col-sm-12 col-md-12 col-lg-12 col-xl-5 d-flex flex-column justify-content-between pb-80">

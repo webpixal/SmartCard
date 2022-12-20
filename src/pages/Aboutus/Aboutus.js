@@ -1,12 +1,13 @@
 import React from "react";
-import Footer from "../../components/footer/Footer";
+import Footer from "../../components/footer/DarkFooter";
 import Headers from "../../components/header/Headers";
-import AboutLayoutOne from "../../scetions/aboutusSections/AboutLayoutOne";
-import HistoryTimeline from "../../scetions/aboutusSections/HistoryTimeline";
-import PageTitle from "../../scetions/aboutusSections/PageTitle";
-import SecondaryNav from "../../scetions/aboutusSections/SecondaryNav";
-import BannerLayoutSectionFive from "../../scetions/BannerLayoutSectionFive";
-import BlogGridSection from "../../scetions/BlogGridSection";
+import AboutLayoutOne from "./aboutusSections/AboutLayoutOne";
+import HistoryTimeline from "./aboutusSections/HistoryTimeline";
+import PageTitle from "./aboutusSections/PageTitle";
+import SecondaryNav from "../../components/header/SecondaryNav";
+import TestimonialSection from "./aboutusSections/TestimonialSection";
+import BannerLayoutSectionFive from "../../scetions/homeSections/BannerLayoutSectionFive";
+import BlogGridSection from "../../scetions/homeSections/BlogGridSection";
 
 export default function Aboutus() {
   return (
@@ -16,6 +17,7 @@ export default function Aboutus() {
       <SecondaryNav />
       <AboutLayoutOne />
       <HistoryTimeline />
+      <TestimonialSection />
       <BannerLayoutSectionFive />
       <BlogGridSection />
       <Footer />

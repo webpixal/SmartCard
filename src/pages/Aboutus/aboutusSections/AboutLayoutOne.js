@@ -1,7 +1,7 @@
 import React from "react";
-import img1 from "../../assets/images/about/singnture.png";
-import img2 from "../../assets/images/testimonials/thumbs/1.png";
-import img3 from "../../assets/images/about/1.jpg";
+import img1 from "../../../assets/images/about/singnture.png";
+import img2 from "../../../assets/images/testimonials/thumbs/1.png";
+import img3 from "../../../assets/images/about/1.jpg";
 
 export default function AboutLayoutOne() {
   return (

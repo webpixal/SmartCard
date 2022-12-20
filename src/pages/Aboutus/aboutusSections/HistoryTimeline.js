@@ -1,7 +1,6 @@
 import React from "react";
-import MiltiSlider from "../../components/slider/MiltiSlider";
-import img1 from "../../assets/images/backgrounds/1.jpg";
-import img2 from "../../assets/images/banners/3.jpg";
+import MiltiSlider from "../../../components/slider/MiltiSlider";
+import img2 from "../../../assets/images/banners/3.jpg";
 
 export default function HistoryTimeline() {
   return (

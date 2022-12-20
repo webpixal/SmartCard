@@ -1128,6 +1128,31 @@ select {
   opacity: 1;
 }
 
+.bg-slider-img-Banner-portfolio-single {
+  background-image: url("../../assets/images/portfolio/single/1.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  position: relative;
+  left: 0px;
+  top: 0px;
+ 
+  opacity: 1;
+}
+
+
+.bg-slider-img-Banner-aboutus {
+  background-image: url("../../assets/images/backgrounds/2.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  position: relative;
+  left: 0px;
+  top: 0px;
+  z-index: 999;
+  opacity: 1;
+}
+
 .bg-slider-img-Banner-Pricing {
   background-image: url("../../assets/images/backgrounds/15.jpg");
   background-size: cover;

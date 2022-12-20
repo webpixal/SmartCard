@@ -1,6 +1,6 @@
 import React from "react";
 import Headers from "../../components/header/Headers";
-import SecondaryNav from "../../scetions/aboutusSections/SecondaryNav";
+import SecondaryNav from "../../components/header/SecondaryNav";
 import ItSolutionsSinglePageTitle from "../../scetions/ItSolutionsSinglePageSections/ItSolutionsSinglePageTitle";
 import SolutionClient from "../../scetions/ItSolutionsSinglePageSections/SolutionClient";
 import SolutionsLayoutThree from "../../scetions/ItSolutionsSinglePageSections/SolutionsLayoutThree";
