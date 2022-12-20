@@ -1,5 +1,5 @@
 import React from "react";
-import img from "../../assets/images/services/4.jpg";
+import img from "../../../assets/images/services/4.jpg";
 
 export default function ServicesLayoutOne() {
   return (

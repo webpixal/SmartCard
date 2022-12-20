@@ -20,6 +20,8 @@ import OurBlog from "./pages/OurBlog/OurBlog";
 import Pricing from "./pages/Pricing/Pricing";
 import RequestQuote from "./pages/RequestQuote/RequestQuote";
 import ItSolutions from "./pages/ItSolutions/ItSolutions";
+import Industries from "./pages/Industries/Industries";
+import IndustriesSingleIndustry from "./pages/IndustriesSingleIndustry/IndustriesSingleIndustry";
 
 function App() {
   return (
@@ -33,6 +35,8 @@ function App() {
       <Route path="/faqs" element={<Faqs />} />
       <Route path="/careers" element={<Careers />} />
       <Route path="/it-solutions" element={<ItSolutions />} />
+      <Route path="/industries" element={<Industries />} />
+      <Route path="/industries-single-industry" element={<IndustriesSingleIndustry />} />
       <Route
         path="/it-solutions-single-page"
         element={<ItSolutionsSinglePage />}

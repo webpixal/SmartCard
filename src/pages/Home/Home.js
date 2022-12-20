@@ -55,7 +55,7 @@ export default function Home() {
         <div className="checking">
           <BannerLayoutSectionFive />
         </div>
-        <BlogGridSection />
+        {/* <BlogGridSection /> */}
         <BannerLayoutTwo />
         <Footer />
       </div>

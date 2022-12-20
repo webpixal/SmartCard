@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import logoL from "../../assets/images/logo/logo-light.png";
 import logoD from "../../assets/images/logo/logo-dark.png";
 // import { Link } from "react-router-dom";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function Headers() {
   const [scroll, setScroll] = useState(false);
@@ -35,7 +35,8 @@ export default function Headers() {
           scroll
             ? "navbar navbar-expand-lg sticky-navbar is-sticky"
             : "navbar navbar-expand-lg sticky-navbar"
-        }>
+        }
+      >
         <div className="container">
           <Link className="navbar-brand" to="/">
             <img src={logoL} className="logo-light" alt="logo" />
@@ -44,7 +45,8 @@ export default function Headers() {
           <button
             onClick={() => onMenuClick()}
             className="navbar-toggler"
-            type="button">
+            type="button"
+          >
             <span className="menu-lines">
               <span />
             </span>
@@ -55,13 +57,15 @@ export default function Headers() {
                 ? "collapse navbar-collapse"
                 : "collapse navbar-collapse menu-opened"
             }
-            id="mainNavigation">
+            id="mainNavigation"
+          >
             <ul className="navbar-nav ml-auto">
               <li className="nav__item  has-dropdown">
                 <Link
                   to="/"
                   data-toggle="dropdown"
-                  className="dropdown-toggle nav__item-link active">
+                  className="dropdown-toggle nav__item-link active"
+                >
                   Home
                 </Link>
                 <ul className="dropdown-menu">
@@ -90,7 +94,8 @@ export default function Headers() {
               <li className="nav__item  has-dropdown">
                 <p
                   data-toggle="dropdown"
-                  className="dropdown-toggle nav__item-link">
+                  className="dropdown-toggle nav__item-link"
+                >
                   Company
                 </p>
                 <ul className="dropdown-menu">
@@ -131,7 +136,7 @@ export default function Headers() {
                   </li>{" "}
                   {/* /.nav-item */}
                   <li className="nav__item">
-                    <Link to="careers" className="nav__item-link">
+                    <Link to="/careers" className="nav__item-link">
                       Careers
                     </Link>
                   </li>
@@ -143,7 +148,8 @@ export default function Headers() {
               <li className="nav__item  has-dropdown">
                 <a
                   data-toggle="dropdown"
-                  className="dropdown-toggle nav__item-link">
+                  className="dropdown-toggle nav__item-link"
+                >
                   IT Solutions
                 </a>
                 <ul className="dropdown-menu">
@@ -152,12 +158,14 @@ export default function Headers() {
                       <div className="col-sm-6 dropdown-menu-col">
                         <Link
                           to="/it-solutions"
-                          className="nav__item-link dropdown-menu-title">
+                          className="nav__item-link dropdown-menu-title"
+                        >
                           IT Solutions
                         </Link>
                         <Link
                           to="/it-solutions-single-page"
-                          className="nav__item-link dropdown-menu-title">
+                          className="nav__item-link dropdown-menu-title"
+                        >
                           IT Solutions Single
                         </Link>
                         {/* <ul className="nav flex-column">
@@ -206,57 +214,64 @@ export default function Headers() {
                         </ul> */}
                       </div>
                       {/* /.col-sm-6 */}
-                      {/* <div className="col-sm-6 dropdown-menu-col">
-                        <a
-                          href="industries.html"
-                          className="nav__item-link dropdown-menu-title">
+                      <div className="col-sm-6 dropdown-menu-col">
+                        <Link
+                          to="/industries"
+                          className="nav__item-link dropdown-menu-title"
+                        >
                           Industries
-                        </a>
+                        </Link>
                         <ul className="nav flex-column">
                           <li className="nav__item">
-                            <a
+                            <Link
+                              to="/industries-single-industry"
                               className="nav__item-link"
-                              href="industries-single-industry.html">
-                              Education, Non-Profit
-                            </a>
+                            >
+                              Single Industry
+                            </Link>
                           </li>{" "}
-                          <li className="nav__item">
+                          {/* <li className="nav__item">
                             <a
                               className="nav__item-link"
-                              href="industries-single-industry.html">
+                              href="industries-single-industry.html"
+                            >
                               Accounting, Finance
                             </a>
                           </li>{" "}
                           <li className="nav__item">
                             <a
                               className="nav__item-link"
-                              href="industries-single-industry.html">
+                              href="industries-single-industry.html"
+                            >
                               Government &amp; Public
                             </a>
                           </li>{" "}
                           <li className="nav__item">
                             <a
                               className="nav__item-link"
-                              href="industries-single-industry.html">
+                              href="industries-single-industry.html"
+                            >
                               Energy &amp; Utilities
                             </a>
                           </li>{" "}
                           <li className="nav__item">
                             <a
                               className="nav__item-link"
-                              href="industries-single-industry.html">
+                              href="industries-single-industry.html"
+                            >
                               Legal, Law Firms
                             </a>
                           </li>{" "}
                           <li className="nav__item">
                             <a
                               className="nav__item-link"
-                              href="industries-single-industry.html">
+                              href="industries-single-industry.html"
+                            >
                               Manufacturing
                             </a>
-                          </li>
+                          </li> */}
                         </ul>
-                      </div> */}
+                      </div>
                       {/* /.col-sm-6 */}
                     </div>
                     {/* /.row */}
@@ -268,9 +283,9 @@ export default function Headers() {
               {/* /.nav-item */}
               <li className="nav__item  has-dropdown">
                 <a
-                  href="#"
                   data-toggle="dropdown"
-                  className="dropdown-toggle nav__item-link">
+                  className="dropdown-toggle nav__item-link"
+                >
                   News&amp;Media
                 </a>
                 <ul className="dropdown-menu">
@@ -281,7 +296,7 @@ export default function Headers() {
                   </li>
                   {/* /.nav-item */}
                   <li className="nav__item">
-                    <Link href="/blog-single-post" className="nav__item-link">
+                    <Link to="/blog-single-post" className="nav__item-link">
                       Single Blog Post
                     </Link>
                   </li>
@@ -357,9 +372,7 @@ export default function Headers() {
           {/* /.navbar-collapse */}
           <ul className="navbar-actions list-unstyled mb-0 d-flex align-items-center">
             <li className="d-none d-xl-block">
-              <a href="request-quote.html" className="btn action__btn-contact">
-                Request A Quote
-              </a>
+              <a className="btn action__btn-contact">Request A Quote</a>
             </li>
             <li>
               <button className="action__btn action__btn-login open-login-popup">
