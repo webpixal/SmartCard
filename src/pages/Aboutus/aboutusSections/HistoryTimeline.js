@@ -88,8 +88,7 @@ export default function HistoryTimeline() {
                 </p>
                 <a
                   href="#"
-                  className="btn btn__primary btn__bordered btn__icon mb-30"
-                >
+                  className="btn btn__primary btn__bordered btn__icon mb-30">
                   <span>Request Demo</span>
                   <i className="icon-arrow-right" />
                 </a>

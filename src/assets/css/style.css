@@ -1082,6 +1082,17 @@ select {
   z-index: 999;
   opacity: 1;
 }
+.bg-img-page-title-Careers {
+  /* background-image: url("../../assets/images/page-titles/7.jpg"); */
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  position: relative;
+  left: 0px;
+  top: 0px;
+  z-index: 999;
+  opacity: 1;
+}
 .bg-img-page-title-faq {
   background-image: url("../../assets/images/backgrounds/14.jpg");
   background-size: cover;
@@ -1136,10 +1147,9 @@ select {
   position: relative;
   left: 0px;
   top: 0px;
- 
+
   opacity: 1;
 }
-
 
 .bg-slider-img-Banner-aboutus {
   background-image: url("../../assets/images/backgrounds/2.jpg");

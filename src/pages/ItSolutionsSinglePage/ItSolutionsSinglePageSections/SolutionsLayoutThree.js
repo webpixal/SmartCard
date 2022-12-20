@@ -1,7 +1,7 @@
 import React from "react";
-import img from "../../assets/images/about/7.jpg";
-import img2 from "../../assets/images/about/3.jpg";
-import img3 from "../../assets/images/about/singnture.png";
+import img from "../../../assets/images/about/7.jpg";
+import img2 from "../../../assets/images/about/3.jpg";
+import img3 from "../../../assets/images/about/singnture.png";
 
 export default function SolutionsLayoutThree() {
   return (

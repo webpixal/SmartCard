@@ -1,5 +1,5 @@
 import React from "react";
-import img1 from "../../assets/images/team/1.jpg";
+import img1 from "../../../assets/images/team/1.jpg";
 
 export default function TeamLayoutOne() {
   return (

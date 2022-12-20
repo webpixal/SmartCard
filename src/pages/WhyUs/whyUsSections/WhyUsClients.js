@@ -1,7 +1,7 @@
 import React from "react";
-import MiniSlider from '../../components/slider/Minislider'
+import MiniSlider from "../../../components/slider/Minislider";
 
-export default function SolutionClient() {
+export default function WhyUsClients() {
   return (
     <section className="clients pt-50 pb-50">
       <div className="container">
@@ -11,8 +11,7 @@ export default function SolutionClient() {
               Trusted By The World's
               <a
                 href="it-solutions.html"
-                className="btn btn__link btn__primary btn__underlined"
-              >
+                className="btn btn__link btn__primary btn__underlined">
                 Best Organizations
               </a>
             </p>
@@ -22,7 +21,7 @@ export default function SolutionClient() {
         {/* /.row */}
         <div className="row align-items-center">
           <div className="col-12">
-            <MiniSlider/>
+            <MiniSlider />
             {/* /.carousel */}
           </div>
           {/* /.col-12 */}

@@ -1,5 +1,5 @@
 import React from "react";
-import img1 from "../../assets/images/about/2.jpg";
+import img1 from "../../../assets/images/about/2.jpg";
 
 export default function AboutLayoutThree() {
   return (

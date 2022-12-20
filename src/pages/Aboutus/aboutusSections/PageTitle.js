@@ -1,11 +1,13 @@
 import React from "react";
+import bg from "../../../assets/images/page-titles/7.jpg";
 
 export default function PageTitle() {
   return (
-    <section className="page-title page-title-layout1 text-center bg-overlay bg-overlay-gradient bg-parallax">
-      <div className="bg-img">
-        <img src="assets/images/page-titles/1.jpg" alt="background" />
-      </div>
+    <section
+      className="page-title page-title-layout1 text-center bg-overlay bg-overlay-gradient bg-parallax bg-img-page-title-Careers"
+      style={{
+        background: `url(${bg})`
+      }}>
       <div className="container">
         <div className="row">
           <div className="col-sm-12 col-md-12 col-lg-12 col-xl-6 offset-xl-3">
@@ -22,8 +24,7 @@ export default function PageTitle() {
               </a>
               <a
                 className="video__btn video__btn-rounded video__btn-white popup-video mx-3"
-                href="https://www.youtube.com/watch?v=nrJtHemSPW4"
-              >
+                href="https://www.youtube.com/watch?v=nrJtHemSPW4">
                 <div className="video__player">
                   <i className="fa fa-play" />
                 </div>

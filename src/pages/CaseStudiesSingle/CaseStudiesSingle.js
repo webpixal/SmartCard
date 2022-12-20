@@ -1,7 +1,7 @@
 import React from "react";
 import DarkFooter from "../../components/footer/DarkFooter";
 import DarkHeaders from "../../components/header/DarkHeaders";
-import PricingWorkProcess from "../../scetions/pricingSections/PricingWorkProcess";
+import PricingWorkProcess from "../Pricing/pricingSections/PricingWorkProcess";
 import BannerLayoutSix from "./CaseStudiesSingleSections/BannerLayoutSix";
 import CaseStudiesSingleTitlePage from "./CaseStudiesSingleSections/CaseStudiesSingleTitlePage";
 import Counter from "./CaseStudiesSingleSections/Counter";
@@ -18,10 +18,10 @@ export default function CaseStudiesSingle() {
       <PortFolioSingle />
       <TextContent />
       <BannerLayoutSix />
-      <TextContentSec/>
-      <Counter/>
+      <TextContentSec />
+      <Counter />
       <PricingWorkProcess />
-      <TextContentThird/>
+      <TextContentThird />
       <DarkFooter />
     </>
   );

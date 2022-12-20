@@ -1,6 +1,6 @@
 import React from "react";
-import Minislider from "../../components/slider/Minislider";
-import Aboutone from "../../assets/images/about/2.jpg";
+import Minislider from "../../../components/slider/Minislider";
+import Aboutone from "../../../assets/images/about/2.jpg";
 
 export default function AboutSection() {
   return (

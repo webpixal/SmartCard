@@ -1,8 +1,32 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 export default function SecondaryNav() {
+  const [scroll, setScroll] = useState(false);
+  const [windowSize, setWindowSize] = useState(getWindowSize());
+  useEffect(() => {
+    const handleScroll = (event) => {
+      if (windowSize.innerWidth >= 992) {
+        setScroll(window.scrollY > 100);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  function getWindowSize() {
+    const { innerWidth, innerHeight } = window;
+    return { innerWidth, innerHeight };
+  }
+
   return (
-    <section className="secondary-nav sticky-top py-0">
+    <section
+      className={
+        scroll
+          ? "secondary-nav secondary-nav-sticky sticky-top py-0"
+          : "secondary-nav sticky-top py-0"
+      }>
       <div className="container">
         <div className="row">
           <div className="col-12">

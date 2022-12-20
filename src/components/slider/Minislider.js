@@ -1,7 +1,6 @@
 import React from "react";
 import Slider from "react-slick";
 import miniimg from "../../assets/images/clients/1.png";
-import Two from "../../assets/images/sliders/2.jpg";
 
 export default function Minislider() {
   var settings = {

@@ -1,5 +1,5 @@
 import React from "react";
-import PortfolioSlider from "../../components/slider/PortfolioSlider";
+import PortfolioSlider from "../../../components/slider/PortfolioSlider";
 
 export default function PortfolioGridSection() {
   return (

@@ -1,5 +1,5 @@
 import React from "react";
-import MiniSlider from "../../components/slider/Minislider";
+import MiniSlider from "../../../components/slider/Minislider";
 
 export default function PricingClient() {
   return (

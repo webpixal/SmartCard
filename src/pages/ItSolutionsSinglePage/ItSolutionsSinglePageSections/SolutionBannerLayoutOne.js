@@ -1,5 +1,5 @@
 import React from "react";
-import { TestimonailsSlider } from "../../components/slider/TestimonailsSlider";
+import { TestimonailsSlider } from "../../../components/slider/TestimonailsSlider";
 
 export default function SolutionBannerLayoutOne() {
   return (

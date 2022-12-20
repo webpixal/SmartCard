@@ -1,5 +1,5 @@
 import React from "react";
-import img2 from "../../assets/images/banners/5.jpg";
+import img2 from "../../../assets/images/banners/5.jpg";
 
 export default function BannerLayoutThree() {
   return (

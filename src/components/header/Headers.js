@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import logoL from "../../assets/images/logo/logo-light.png";
 import logoD from "../../assets/images/logo/logo-dark.png";
+// import { Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 export default function Headers() {
   const [scroll, setScroll] = useState(false);
@@ -33,18 +35,16 @@ export default function Headers() {
           scroll
             ? "navbar navbar-expand-lg sticky-navbar is-sticky"
             : "navbar navbar-expand-lg sticky-navbar"
-        }
-      >
+        }>
         <div className="container">
-          <a className="navbar-brand" href="index.html">
+          <Link className="navbar-brand" to="/">
             <img src={logoL} className="logo-light" alt="logo" />
             <img src={logoD} className="logo-dark" alt="logo" />
-          </a>
+          </Link>
           <button
             onClick={() => onMenuClick()}
             className="navbar-toggler"
-            type="button"
-          >
+            type="button">
             <span className="menu-lines">
               <span />
             </span>
@@ -55,89 +55,85 @@ export default function Headers() {
                 ? "collapse navbar-collapse"
                 : "collapse navbar-collapse menu-opened"
             }
-            id="mainNavigation"
-          >
+            id="mainNavigation">
             <ul className="navbar-nav ml-auto">
               <li className="nav__item  has-dropdown">
-                <a
-                  href="index.html"
+                <Link
+                  to="/"
                   data-toggle="dropdown"
-                  className="dropdown-toggle nav__item-link active"
-                >
+                  className="dropdown-toggle nav__item-link active">
                   Home
-                </a>
+                </Link>
                 <ul className="dropdown-menu">
                   <li className="nav__item">
-                    <a href="index.html" className="nav__item-link">
+                    <Link to="/" className="nav__item-link">
                       Home Main
-                    </a>
+                    </Link>
                   </li>
                   {/* /.nav-item */}
-                  <li className="nav__item">
+                  {/* <li className="nav__item">
                     <a href="home-modern.html" className="nav__item-link">
                       Home Modern
                     </a>
                   </li>
-                  {/* /.nav-item */}
+               
                   <li className="nav__item">
                     <a href="home-classic.html" className="nav__item-link">
                       Home Classic
                     </a>
-                  </li>
+                  </li> */}
                   {/* /.nav-item */}
                 </ul>
                 {/* /.dropdown-menu */}
               </li>
               {/* /.nav-item */}
               <li className="nav__item  has-dropdown">
-                <a
-                  href="#"
+                <p
                   data-toggle="dropdown"
-                  className="dropdown-toggle nav__item-link"
-                >
+                  className="dropdown-toggle nav__item-link">
                   Company
-                </a>
+                </p>
                 <ul className="dropdown-menu">
                   <li className="nav__item">
-                    <a href="about-us.html" className="nav__item-link">
+                    <Link to="/about-us" className="nav__item-link">
                       About Us
-                    </a>
+                    </Link>
                   </li>
                   {/* /.nav-item */}
                   <li className="nav__item">
-                    <a href="why-us.html" className="nav__item-link">
+                    <Link to="/why-us" className="nav__item-link">
                       Why Choose Us
-                    </a>
+                    </Link>
                   </li>
                   {/* /.nav-item */}
                   <li className="nav__item">
-                    <a href="leadership-team.html" className="nav__item-link">
+                    <Link to="/leadership-team" className="nav__item-link">
                       Leadership Team
-                    </a>
+                    </Link>
                   </li>
                   {/* /.nav-item */}
                   <li className="nav__item">
-                    <a href="awards.html" className="nav__item-link">
+                    <Link to="/awards" className="nav__item-link">
                       Award &amp; Recognition
-                    </a>
+                    </Link>
                   </li>
                   {/* /.nav-item */}
                   <li className="nav__item">
-                    <a href="pricing.html" className="nav__item-link">
+                    <Link to="/pricing" className="nav__item-link">
                       Pricing &amp; Plans
-                    </a>
+                    </Link>
                   </li>
                   {/* /.nav-item */}
                   <li className="nav__item">
-                    <a href="faqs.html" className="nav__item-link">
+                    <Link to="/faqs" className="nav__item-link">
                       Help &amp; FAQs
-                    </a>
+                    </Link>
                   </li>{" "}
                   {/* /.nav-item */}
                   <li className="nav__item">
-                    <a href="careers.html" className="nav__item-link">
+                    <Link to="careers" className="nav__item-link">
                       Careers
-                    </a>
+                    </Link>
                   </li>
                   {/* /.nav-item */}
                 </ul>
@@ -146,144 +142,121 @@ export default function Headers() {
               {/* /.nav-item */}
               <li className="nav__item  has-dropdown">
                 <a
-                  href="#"
                   data-toggle="dropdown"
-                  className="dropdown-toggle nav__item-link"
-                >
+                  className="dropdown-toggle nav__item-link">
                   IT Solutions
                 </a>
-                <ul className="dropdown-menu wide-dropdown-menu">
+                <ul className="dropdown-menu">
                   <li className="nav__item">
                     <div className="row mx-0">
                       <div className="col-sm-6 dropdown-menu-col">
-                        <a
-                          href="it-solutions.html"
-                          className="nav__item-link dropdown-menu-title"
-                        >
+                        <Link
+                          to="/it-solutions"
+                          className="nav__item-link dropdown-menu-title">
                           IT Solutions
-                        </a>
-                        <ul className="nav flex-column">
+                        </Link>
+                        <Link
+                          to="/it-solutions-single-page"
+                          className="nav__item-link dropdown-menu-title">
+                          IT Solutions Single
+                        </Link>
+                        {/* <ul className="nav flex-column">
                           <li className="nav__item">
                             <a
                               className="nav__item-link"
-                              href="it-solutions-single.html"
-                            >
+                              href="it-solutions-single.html">
                               IT Management
                             </a>
                           </li>{" "}
-                          {/* /.nav-item */}
                           <li className="nav__item">
                             <a
                               className="nav__item-link"
-                              href="it-solutions-single.html"
-                            >
+                              href="it-solutions-single.html">
                               Cyber Security
                             </a>
                           </li>{" "}
-                          {/* /.nav-item */}
                           <li className="nav__item">
                             <a
                               className="nav__item-link"
-                              href="it-solutions-single.html"
-                            >
+                              href="it-solutions-single.html">
                               Cloud Computing
                             </a>
                           </li>{" "}
-                          {/* /.nav-item */}
                           <li className="nav__item">
                             <a
                               className="nav__item-link"
-                              href="it-solutions-single.html"
-                            >
+                              href="it-solutions-single.html">
                               IT Consulting
                             </a>
                           </li>{" "}
-                          {/* /.nav-item */}
                           <li className="nav__item">
                             <a
                               className="nav__item-link"
-                              href="it-solutions-single.html"
-                            >
+                              href="it-solutions-single.html">
                               Software Dev
                             </a>
                           </li>{" "}
-                          {/* /.nav-item */}
                           <li className="nav__item">
                             <a
                               className="nav__item-link"
-                              href="it-solutions-single.html"
-                            >
+                              href="it-solutions-single.html">
                               IT Support
                             </a>
                           </li>
-                          {/* /.nav-item */}
-                        </ul>
+                        </ul> */}
                       </div>
                       {/* /.col-sm-6 */}
-                      <div className="col-sm-6 dropdown-menu-col">
+                      {/* <div className="col-sm-6 dropdown-menu-col">
                         <a
                           href="industries.html"
-                          className="nav__item-link dropdown-menu-title"
-                        >
+                          className="nav__item-link dropdown-menu-title">
                           Industries
                         </a>
                         <ul className="nav flex-column">
                           <li className="nav__item">
                             <a
                               className="nav__item-link"
-                              href="industries-single-industry.html"
-                            >
+                              href="industries-single-industry.html">
                               Education, Non-Profit
                             </a>
                           </li>{" "}
-                          {/* /.nav-item */}
                           <li className="nav__item">
                             <a
                               className="nav__item-link"
-                              href="industries-single-industry.html"
-                            >
+                              href="industries-single-industry.html">
                               Accounting, Finance
                             </a>
                           </li>{" "}
-                          {/* /.nav-item */}
                           <li className="nav__item">
                             <a
                               className="nav__item-link"
-                              href="industries-single-industry.html"
-                            >
+                              href="industries-single-industry.html">
                               Government &amp; Public
                             </a>
                           </li>{" "}
-                          {/* /.nav-item */}
                           <li className="nav__item">
                             <a
                               className="nav__item-link"
-                              href="industries-single-industry.html"
-                            >
+                              href="industries-single-industry.html">
                               Energy &amp; Utilities
                             </a>
                           </li>{" "}
-                          {/* /.nav-item */}
                           <li className="nav__item">
                             <a
                               className="nav__item-link"
-                              href="industries-single-industry.html"
-                            >
+                              href="industries-single-industry.html">
                               Legal, Law Firms
                             </a>
                           </li>{" "}
-                          {/* /.nav-item */}
                           <li className="nav__item">
                             <a
                               className="nav__item-link"
-                              href="industries-single-industry.html"
-                            >
+                              href="industries-single-industry.html">
                               Manufacturing
                             </a>
                           </li>
-                          {/* /.nav-item */}
                         </ul>
-                      </div>
+                      </div> */}
                       {/* /.col-sm-6 */}
                     </div>
                     {/* /.row */}
@@ -297,66 +270,55 @@ export default function Headers() {
                 <a
                   href="#"
                   data-toggle="dropdown"
-                  className="dropdown-toggle nav__item-link"
-                >
+                  className="dropdown-toggle nav__item-link">
                   News&amp;Media
                 </a>
                 <ul className="dropdown-menu">
                   <li className="nav__item">
-                    <a href="blog.html" className="nav__item-link">
+                    <Link to="/our-blog" className="nav__item-link">
                       Our Blog
-                    </a>
+                    </Link>
                   </li>
                   {/* /.nav-item */}
                   <li className="nav__item">
-                    <a href="blog-single-post.html" className="nav__item-link">
+                    <Link href="/blog-single-post" className="nav__item-link">
                       Single Blog Post
-                    </a>
+                    </Link>
                   </li>
                   {/* /.nav-item */}
                   <li className="nav__item">
-                    <a href="case-studies-grid.html" className="nav__item-link">
+                    <Link to="/case-studies-grid" className="nav__item-link">
                       Case Studies Grid
-                    </a>
+                    </Link>
                   </li>
-                  {/* /.nav-item */}
-                  <li className="nav__item">
+                  {/* <li className="nav__item">
                     <a
                       href="case-studies-carousel.html"
-                      className="nav__item-link"
-                    >
+                      className="nav__item-link">
                       Case Studies Carousel
                     </a>
                   </li>
-                  {/* /.nav-item */}
                   <li className="nav__item">
                     <a
                       href="case-studies-classic.html"
-                      className="nav__item-link"
-                    >
+                      className="nav__item-link">
                       Case Studies Classic
                     </a>
-                  </li>
-                  {/* /.nav-item */}
+                  </li> */}
                   <li className="nav__item">
-                    <a
-                      href="case-studies-single.html"
-                      className="nav__item-link"
-                    >
+                    <Link to="/case-studies-single" className="nav__item-link">
                       Single Case Study
-                    </a>
+                    </Link>
                   </li>
                   {/* /.nav-item */}
                 </ul>
                 {/* /.dropdown-menu */}
               </li>
-              {/* /.nav-item */}
-              <li className="nav__item  has-dropdown">
+              {/* <li className="nav__item  has-dropdown">
                 <a
                   href="#"
                   data-toggle="dropdown"
-                  className="dropdown-toggle nav__item-link"
-                >
+                  className="dropdown-toggle nav__item-link">
                   Features
                 </a>
                 <ul className="dropdown-menu">
@@ -365,33 +327,28 @@ export default function Headers() {
                       Coming Soon
                     </a>
                   </li>
-                  {/* /.nav-item */}
                   <li className="nav__item">
                     <a href="404.html" className="nav__item-link">
                       404 Page
                     </a>
                   </li>
-                  {/* /.nav-item */}
                   <li className="nav__item">
                     <a href="#" className="nav__item-link  open-register-popup">
                       Register
                     </a>
                   </li>
-                  {/* /.nav-item */}
                   <li className="nav__item">
                     <a href="#" className="nav__item-link  open-login-popup">
                       Login
                     </a>
                   </li>
-                  {/* /.nav-item */}
                 </ul>
-                {/* /.dropdown-menu */}
-              </li>
+              </li> */}
               {/* /.nav-item */}
               <li className="nav__item">
-                <a href="contact-us.html" className="nav__item-link">
+                <Link to="/contact-us" className="nav__item-link">
                   Contacts
-                </a>
+                </Link>
               </li>
               {/* /.nav-item */}
             </ul>

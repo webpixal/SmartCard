@@ -6,8 +6,8 @@ import HistoryTimeline from "./aboutusSections/HistoryTimeline";
 import PageTitle from "./aboutusSections/PageTitle";
 import SecondaryNav from "../../components/header/SecondaryNav";
 import TestimonialSection from "./aboutusSections/TestimonialSection";
-import BannerLayoutSectionFive from "../../scetions/homeSections/BannerLayoutSectionFive";
-import BlogGridSection from "../../scetions/homeSections/BlogGridSection";
+import BannerLayoutSectionFive from "../Home/homeSections/BannerLayoutSectionFive";
+import BlogGridSection from "../Home/homeSections/BlogGridSection";
 
 export default function Aboutus() {
   return (

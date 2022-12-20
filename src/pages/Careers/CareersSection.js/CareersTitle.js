@@ -1,11 +1,16 @@
 import React from "react";
+import bg from "../../../assets/images/page-titles/7.jpg";
 
 export default function CareersTitle() {
   return (
-    <section className="page-title page-title-layout4 text-center bg-overlay bg-overlay-gradient bg-parallax">
-      <div className="bg-img">
+    <section
+      className="page-title page-title-layout4 text-center bg-overlay bg-overlay-gradient bg-parallax bg-img-page-title-Careers"
+      style={{
+        background: `url(${bg})`
+      }}>
+      {/* <div className="bg-img">
         <img src="assets/images/page-titles/7.jpg" alt="background" />
-      </div>
+      </div> */}
       <div className="container">
         <div className="row">
           <div className="col-12">

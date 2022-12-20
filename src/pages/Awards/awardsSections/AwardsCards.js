@@ -1,5 +1,5 @@
 import React from "react";
-import img from "../../assets/images/awards/icons/1.png";
+import img from "../../../assets/images/awards/icons/1.png";
 
 export default function AwardsCards() {
   return (

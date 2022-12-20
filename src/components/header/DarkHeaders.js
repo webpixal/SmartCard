@@ -1,17 +1,48 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import logoL from "../../assets/images/logo/logo-light.png";
 import logoD from "../../assets/images/logo/logo-dark.png";
 
 export default function DarkHeaders() {
+  const [scroll, setScroll] = useState(false);
+  const [toggleIsMenu, settoggleIsMenu] = useState(false);
+  const [windowSize, setWindowSize] = useState(getWindowSize());
+  useEffect(() => {
+    const handleScroll = (event) => {
+      if (windowSize.innerWidth >= 992) {
+        setScroll(window.scrollY > 50);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  function getWindowSize() {
+    const { innerWidth, innerHeight } = window;
+    return { innerWidth, innerHeight };
+  }
+
+  const onMenuClick = () => {
+    settoggleIsMenu(!toggleIsMenu);
+  };
   return (
     <header className="header header-light">
-      <nav className="navbar navbar-expand-lg sticky-navbar">
+      <nav
+        className={
+          scroll
+            ? "navbar navbar-expand-lg sticky-navbar is-sticky"
+            : "navbar navbar-expand-lg sticky-navbar"
+        }>
         <div className="container">
           <a className="navbar-brand" href="index.html">
             <img src={logoL} className="logo-light" alt="logo" />
             <img src={logoD} className="logo-dark" alt="logo" />
           </a>
-          <button className="navbar-toggler" type="button">
+          <button
+            onClick={() => onMenuClick()}
+            className="navbar-toggler"
+            type="button">
             <span className="menu-lines">
               <span />
             </span>
@@ -22,8 +53,7 @@ export default function DarkHeaders() {
                 <a
                   href="index.html"
                   data-toggle="dropdown"
-                  className="dropdown-toggle nav__item-link"
-                >
+                  className="dropdown-toggle nav__item-link">
                   Home
                 </a>
                 <ul className="dropdown-menu">
@@ -53,8 +83,7 @@ export default function DarkHeaders() {
                 <a
                   href="#"
                   data-toggle="dropdown"
-                  className="dropdown-toggle nav__item-link"
-                >
+                  className="dropdown-toggle nav__item-link">
                   Company
                 </a>
                 <ul className="dropdown-menu">
@@ -108,8 +137,7 @@ export default function DarkHeaders() {
                 <a
                   href="#"
                   data-toggle="dropdown"
-                  className="dropdown-toggle nav__item-link"
-                >
+                  className="dropdown-toggle nav__item-link">
                   IT Solutions
                 </a>
                 <ul className="dropdown-menu wide-dropdown-menu">
@@ -118,16 +146,14 @@ export default function DarkHeaders() {
                       <div className="col-sm-6 dropdown-menu-col">
                         <a
                           href="it-solutions.html"
-                          className="nav__item-link dropdown-menu-title"
-                        >
+                          className="nav__item-link dropdown-menu-title">
                           IT Solutions
                         </a>
                         <ul className="nav flex-column">
                           <li className="nav__item">
                             <a
                               className="nav__item-link"
-                              href="it-solutions-single.html"
-                            >
+                              href="it-solutions-single.html">
                               IT Management
                             </a>
                           </li>{" "}
@@ -135,8 +161,7 @@ export default function DarkHeaders() {
                           <li className="nav__item">
                             <a
                               className="nav__item-link"
-                              href="it-solutions-single.html"
-                            >
+                              href="it-solutions-single.html">
                               Cyber Security
                             </a>
                           </li>{" "}
@@ -144,8 +169,7 @@ export default function DarkHeaders() {
                           <li className="nav__item">
                             <a
                               className="nav__item-link"
-                              href="it-solutions-single.html"
-                            >
+                              href="it-solutions-single.html">
                               Cloud Computing
                             </a>
                           </li>{" "}
@@ -153,8 +177,7 @@ export default function DarkHeaders() {
                           <li className="nav__item">
                             <a
                               className="nav__item-link"
-                              href="it-solutions-single.html"
-                            >
+                              href="it-solutions-single.html">
                               IT Consulting
                             </a>
                           </li>{" "}
@@ -162,8 +185,7 @@ export default function DarkHeaders() {
                           <li className="nav__item">
                             <a
                               className="nav__item-link"
-                              href="it-solutions-single.html"
-                            >
+                              href="it-solutions-single.html">
                               Software Dev
                             </a>
                           </li>{" "}
@@ -171,8 +193,7 @@ export default function DarkHeaders() {
                           <li className="nav__item">
                             <a
                               className="nav__item-link"
-                              href="it-solutions-single.html"
-                            >
+                              href="it-solutions-single.html">
                               IT Support
                             </a>
                           </li>
@@ -183,16 +204,14 @@ export default function DarkHeaders() {
                       <div className="col-sm-6 dropdown-menu-col">
                         <a
                           href="industries.html"
-                          className="nav__item-link dropdown-menu-title"
-                        >
+                          className="nav__item-link dropdown-menu-title">
                           Industries
                         </a>
                         <ul className="nav flex-column">
                           <li className="nav__item">
                             <a
                               className="nav__item-link"
-                              href="industries-single-industry.html"
-                            >
+                              href="industries-single-industry.html">
                               Education, Non-Profit
                             </a>
                           </li>{" "}
@@ -200,8 +219,7 @@ export default function DarkHeaders() {
                           <li className="nav__item">
                             <a
                               className="nav__item-link"
-                              href="industries-single-industry.html"
-                            >
+                              href="industries-single-industry.html">
                               Accounting, Finance
                             </a>
                           </li>{" "}
@@ -209,8 +227,7 @@ export default function DarkHeaders() {
                           <li className="nav__item">
                             <a
                               className="nav__item-link"
-                              href="industries-single-industry.html"
-                            >
+                              href="industries-single-industry.html">
                               Government &amp; Public
                             </a>
                           </li>{" "}
@@ -218,8 +235,7 @@ export default function DarkHeaders() {
                           <li className="nav__item">
                             <a
                               className="nav__item-link"
-                              href="industries-single-industry.html"
-                            >
+                              href="industries-single-industry.html">
                               Energy &amp; Utilities
                             </a>
                           </li>{" "}
@@ -227,8 +243,7 @@ export default function DarkHeaders() {
                           <li className="nav__item">
                             <a
                               className="nav__item-link"
-                              href="industries-single-industry.html"
-                            >
+                              href="industries-single-industry.html">
                               Legal, Law Firms
                             </a>
                           </li>{" "}
@@ -236,8 +251,7 @@ export default function DarkHeaders() {
                           <li className="nav__item">
                             <a
                               className="nav__item-link"
-                              href="industries-single-industry.html"
-                            >
+                              href="industries-single-industry.html">
                               Manufacturing
                             </a>
                           </li>
@@ -257,8 +271,7 @@ export default function DarkHeaders() {
                 <a
                   href="#"
                   data-toggle="dropdown"
-                  className="dropdown-toggle nav__item-link active"
-                >
+                  className="dropdown-toggle nav__item-link active">
                   News&amp;Media
                 </a>
                 <ul className="dropdown-menu">
@@ -283,8 +296,7 @@ export default function DarkHeaders() {
                   <li className="nav__item">
                     <a
                       href="case-studies-carousel.html"
-                      className="nav__item-link"
-                    >
+                      className="nav__item-link">
                       Case Studies Carousel
                     </a>
                   </li>
@@ -292,8 +304,7 @@ export default function DarkHeaders() {
                   <li className="nav__item">
                     <a
                       href="case-studies-classic.html"
-                      className="nav__item-link"
-                    >
+                      className="nav__item-link">
                       Case Studies Classic
                     </a>
                   </li>
@@ -301,8 +312,7 @@ export default function DarkHeaders() {
                   <li className="nav__item">
                     <a
                       href="case-studies-single.html"
-                      className="nav__item-link"
-                    >
+                      className="nav__item-link">
                       Single Case Study
                     </a>
                   </li>
@@ -315,8 +325,7 @@ export default function DarkHeaders() {
                 <a
                   href="#"
                   data-toggle="dropdown"
-                  className="dropdown-toggle nav__item-link"
-                >
+                  className="dropdown-toggle nav__item-link">
                   Features
                 </a>
                 <ul className="dropdown-menu">
