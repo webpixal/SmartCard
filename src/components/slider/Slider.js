@@ -30,13 +30,10 @@ export default function SimpleSlider() {
                   <div className="col-sm-12 col-md-12 col-lg-12 col-xl-7">
                     <div className="slide__content">
                       <h2 className="slide__title">
-                        We Run All Kinds Of IT Services That Vow Your Success
+                      No journey in business is easy sailing; however, experience, wisdom and expertise can make a difference
                       </h2>
                       <p className="slide__desc">
-                        We are experienced professionals who understand that It
-                        services is changing, and are true partners who care
-                        about your success. Our team provides a consultative
-                        approach on emerging technology.
+                      Want to explore..... why not engage with a NO obligation, Free consultancy? That might JUST make the difference!
                       </p>
                       <a href="#" className="btn btn__primary btn__icon mr-30">
                         <span>More About Us</span>

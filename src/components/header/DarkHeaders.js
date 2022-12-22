@@ -56,28 +56,11 @@ export default function DarkHeaders() {
                 <Link
                   to="/"
                   data-toggle="dropdown"
-                  className="dropdown-toggle nav__item-link"
+                  className=" nav__item-link"
                 >
                   Home
                 </Link>
-                <ul className="dropdown-menu">
-                  <li className="nav__item">
-                    <Link to="/" className="nav__item-link">
-                      Home Main
-                    </Link>
-                  </li>
-                  {/* <li className="nav__item">
-                    <a href="home-modern.html" className="nav__item-link">
-                      Home Modern
-                    </a>
-                  </li>
-                  <li className="nav__item">
-                    <a href="home-classic.html" className="nav__item-link">
-                      Home Classic
-                    </a>
-                  </li> */}
-                </ul>
-                {/* /.dropdown-menu */}
+
               </li>
               {/* /.nav-item */}
               <li className="nav__item  has-dropdown">

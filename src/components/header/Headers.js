@@ -64,30 +64,11 @@ export default function Headers() {
                 <Link
                   to="/"
                   data-toggle="dropdown"
-                  className="dropdown-toggle nav__item-link active"
+                  className="nav__item-link active"
                 >
                   Home
                 </Link>
-                <ul className="dropdown-menu">
-                  <li className="nav__item">
-                    <Link to="/" className="nav__item-link">
-                      Home Main
-                    </Link>
-                  </li>
-                  {/* /.nav-item */}
-                  {/* <li className="nav__item">
-                    <a href="home-modern.html" className="nav__item-link">
-                      Home Modern
-                    </a>
-                  </li>
-               
-                  <li className="nav__item">
-                    <a href="home-classic.html" className="nav__item-link">
-                      Home Classic
-                    </a>
-                  </li> */}
-                  {/* /.nav-item */}
-                </ul>
+
                 {/* /.dropdown-menu */}
               </li>
               {/* /.nav-item */}
@@ -281,85 +262,7 @@ export default function Headers() {
                 {/* /.dropdown-menu */}
               </li>
               {/* /.nav-item */}
-              <li className="nav__item  has-dropdown">
-                <a
-                  data-toggle="dropdown"
-                  className="dropdown-toggle nav__item-link"
-                >
-                  News&amp;Media
-                </a>
-                <ul className="dropdown-menu">
-                  <li className="nav__item">
-                    <Link to="/our-blog" className="nav__item-link">
-                      Our Blog
-                    </Link>
-                  </li>
-                  {/* /.nav-item */}
-                  <li className="nav__item">
-                    <Link to="/blog-single-post" className="nav__item-link">
-                      Single Blog Post
-                    </Link>
-                  </li>
-                  {/* /.nav-item */}
-                  <li className="nav__item">
-                    <Link to="/case-studies-grid" className="nav__item-link">
-                      Case Studies Grid
-                    </Link>
-                  </li>
-                  {/* <li className="nav__item">
-                    <a
-                      href="case-studies-carousel.html"
-                      className="nav__item-link">
-                      Case Studies Carousel
-                    </a>
-                  </li>
-                  <li className="nav__item">
-                    <a
-                      href="case-studies-classic.html"
-                      className="nav__item-link">
-                      Case Studies Classic
-                    </a>
-                  </li> */}
-                  <li className="nav__item">
-                    <Link to="/case-studies-single" className="nav__item-link">
-                      Single Case Study
-                    </Link>
-                  </li>
-                  {/* /.nav-item */}
-                </ul>
-                {/* /.dropdown-menu */}
-              </li>
-              {/* <li className="nav__item  has-dropdown">
-                <a
-                  href="#"
-                  data-toggle="dropdown"
-                  className="dropdown-toggle nav__item-link">
-                  Features
-                </a>
-                <ul className="dropdown-menu">
-                  <li className="nav__item">
-                    <a href="coming-soon.html" className="nav__item-link">
-                      Coming Soon
-                    </a>
-                  </li>
-                  <li className="nav__item">
-                    <a href="404.html" className="nav__item-link">
-                      404 Page
-                    </a>
-                  </li>
-                  <li className="nav__item">
-                    <a href="#" className="nav__item-link  open-register-popup">
-                      Register
-                    </a>
-                  </li>
-                  <li className="nav__item">
-                    <a href="#" className="nav__item-link  open-login-popup">
-                      Login
-                    </a>
-                  </li>
-                </ul>
-              </li> */}
-              {/* /.nav-item */}
+
               <li className="nav__item">
                 <Link to="/contact-us" className="nav__item-link">
                   Contacts
